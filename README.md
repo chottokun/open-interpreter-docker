@@ -29,15 +29,32 @@ $ docker run -it --rm -v $(pwd):/root open-interpreter-simple
 $ docker run -it --rm -e OPENAI_API_KEY=<OPENAI_API_KEY> -v $(pwd):/root open-interpreter-simple
 ```
 
+## Local
+
+### Docker build
+
+```sh
+$ cd ~/open-interpreter-local
+$ docker build -t open-interpreter-local ./container-local
+```
+
+### Docker run
+1. Run [LM Studio](https://lmstudio.ai/) and turn on server mode.
+1. 
+
+```sh
+docker run --rm -it --add-host=localhost:xx.xx.xx.xx open-interpreter-local bash
+```
+xx.xx.xx.xx : LM Studio server ip address.
 
 ### Run app
 Execute following command in container:
 
 ```sh
-root@hostname:~# interpreter -y
+root@hostname:~# interpreter -y --local
 ```
 
-And enjoy open interpreter
+And enjoy open interpreter with local LLM.
 
 
 ## GUI
